@@ -7,7 +7,7 @@ const binarySearch = (list, target) => {
   let endIndex = sortList.length - 1
 
   while (startIndex <= endIndex) {
-    let midIndex = Math.floor((start + end) / 2)
+    let midIndex = Math.floor((startIndex + endIndex) / 2)
 
     const currentValue = sortList[midIndex]
     const equalTarget = currentValue === target
