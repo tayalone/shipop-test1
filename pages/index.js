@@ -1,10 +1,5 @@
 import React, { useState } from 'react'
 
-// const regex = /(\d+)(,\s*\d+)*/gm
-// const regexObj = new RegExp(regex)
-
-// var patt = new RegExp(/(\d+)(,\s*\d+)*/)
-
 function index() {
   const [list, setList] = useState('')
 
@@ -12,8 +7,6 @@ function index() {
     const newList = e.target.value
     setList(newList)
   }
-
-  const splitList = list.split(',')
 
   return (
     <div>
