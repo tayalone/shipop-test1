@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import searchs from '../utils/searchs'
 
-const checkInputPattern = /^\d+(,\s*\d+)*$/
+const checkInputPattern = /^([0]|[-]*[1-9][0-9]*)+(,\s*([0]|[-]*[1-9][0-9]*)+)*$/
 
 const convertStringToArrayOfString = (str) => {
   const removeSpace = str.replace(/\s/g, '')
