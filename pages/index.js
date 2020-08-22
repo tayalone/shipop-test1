@@ -1,5 +1,14 @@
 import React, { useState } from 'react'
+import styled from 'styled-components'
 import searchs from '../utils/searchs'
+
+const Container = styled.div`
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid palevioletred;
+  border-radius: 3px;
+`
 
 const checkInputPattern = /^([0]|[-]*[1-9][0-9]*)+(,\s*([0]|[-]*[1-9][0-9]*)+)*$/
 
@@ -53,7 +62,7 @@ function index() {
   const isDisableSubmitBtn = !listValid
 
   return (
-    <div>
+    <Container>
       Welcome to Next.js!!!
       <div>
         <h1>Debug</h1>
@@ -95,7 +104,7 @@ function index() {
         <label>Result</label>
         <div></div>
       </div>
-    </div>
+    </Container>
   )
 }
 
