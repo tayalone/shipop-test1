@@ -2,20 +2,17 @@ import React from 'react'
 import styled from 'styled-components'
 
 const SectionListInput = styled.div`
+  flex-direction: column;
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  justify-content: center;
+  align-items: stretch;
   flex: 1;
   width: 100%;
   padding: 4px;
 `
 
 const LabelDiv = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 8px;
-  width: 50px;
+  text-align: center;
 `
 
 const Lable = styled.label`
@@ -32,45 +29,49 @@ const InputGroup = styled.div`
   flex: 2;
 `
 
-const Input = styled.input`
+const Select = styled.select`
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
-  width: 100%;
+  width: 40%;
   flex: 1;
-  text-align: center;
 `
+
 const ErrorSpan = styled.span`
   color: red;
   margin: 8px 8px;
 `
 
-export default function ListInput({
-  handlerOnChage,
-  valuObj,
-  type,
-  label,
-  name
-}) {
+function ListSelect({ handlerOnChage, valuObj, label, name }) {
   const { value, isError, errorMessage } = valuObj
+
   return (
     <SectionListInput>
       <LabelDiv>
         <Lable>{label}</Lable>
       </LabelDiv>
       <InputGroup>
-        <div style={{ display: 'flex', flex: 1 }}>
-          <Input
-            type={type}
-            name={name}
-            onChange={handlerOnChage}
-            value={value}
-          />
+        <div
+          style={{
+            display: 'flex',
+            flex: 1,
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}
+        >
+          <Select name={name} value={value} onChange={handlerOnChage}>
+            <option value="LINEAR_SEARCH">1. Linear Search</option>
+            <option value="BINARY_SEARCH">2. Binary Search</option>
+            <option value="BUBBULE_SEARCH">3. Bubble Search</option>
+          </Select>
+          {isError && <ErrorSpan> {errorMessage}</ErrorSpan>}
         </div>
-        {isError && <ErrorSpan> {errorMessage}</ErrorSpan>}
       </InputGroup>
     </SectionListInput>
   )
 }
+
+export default ListSelect
