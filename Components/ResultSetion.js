@@ -31,7 +31,7 @@ function ResultSetion({ result }) {
   // target: 1
 
   const listStr = useMemo(() => {
-    const listLength = list.lengeh
+    const listLength = list.length
     if (listLength <= 0) {
       return ''
     } else {
