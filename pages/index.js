@@ -10,11 +10,6 @@ import Spinner from '../Components/Spinner'
 
 import ResultSetion from '../Components/ResultSetion'
 
-const Title = styled.h1`
-  font-size: 50px;
-  color: ${({ theme }) => theme.colors.primary};
-`
-
 const Body = styled.div`
   display: flex;
   flex-direction: column;
@@ -107,7 +102,7 @@ function index() {
 
     setSearchTarget({
       ...seachTarget,
-      value: parseInt(newSeachTarget),
+      value: isValidPattern ? parseInt(newSeachTarget) : newSeachTarget,
       isError: isErrorEmpty || !isValidPattern,
       errorMessage: isErrorEmpty
         ? 'กรุณาใส่ข้อมูลตัวเลข'
@@ -184,7 +179,7 @@ function index() {
         <ListInput
           handlerOnChage={handlerOnChangedSearchTarget}
           valuObj={seachTarget}
-          type={'number'}
+          type={'text'}
           label={'ค้นหา'}
           name={'search_number'}
         />
