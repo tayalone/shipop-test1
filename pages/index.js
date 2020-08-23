@@ -17,6 +17,7 @@ const Title = styled.h1`
 
 const Body = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100vw;
@@ -171,16 +172,8 @@ function index() {
   console.log(result)
   return (
     <Body>
+      <h1>Shippop Test 1 - Search Integer in List</h1>
       <Container>
-        {/* <Title> Welcome to Next.js!!!</Title>
-        <div>
-          <h1>Debug</h1>
-          <div>List: {list}</div>
-          <div>Currentlist Valid: {String(listValid)}</div>
-          <div>Search Target: {seachTarget}</div>
-          <div>Search Type: {searchType}</div>
-          <div>Result: {JSON.stringify(result)}</div>
-        </div> */}
         <ListInput
           handlerOnChage={handlerOnChangedList}
           valuObj={list}
