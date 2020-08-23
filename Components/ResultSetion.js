@@ -24,19 +24,12 @@ const ResultSection = styled.div`
 function ResultSetion({ result }) {
   const { isRender, value, list, target } = result
 
-  // isRender: true,
-  // isLoading: false,
-  // value: [{ value: 1, equalTarget: true }],
-  // list: [1, 2, 3],
-  // target: 1
-
   const listStr = useMemo(() => {
-    const listLength = list.lengeh
-    if (listLength <= 0) {
+    if (list.length <= 0) {
       return ''
     } else {
       return list.reduce((acc, l, index) => {
-        return acc + ` ${l} ${index !== listLength - 1 ? ',' : ''}`
+        return acc + ` ${l} ${index !== list.length - 1 ? ',' : ''}`
       }, '')
     }
   }, [list])
