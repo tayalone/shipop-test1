@@ -164,7 +164,6 @@ function index() {
     )
   }, [list.isError, seachTarget.isError, searchType.isError, result.isLoading])
 
-  console.log(result)
   return (
     <Body>
       <h1>Shippop Test 1 - Search Integer in List</h1>
